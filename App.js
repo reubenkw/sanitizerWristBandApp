@@ -29,17 +29,19 @@ import SVG, { Circle } from 'react-native-svg';
 const App: () => React$Node = () => {
   return ( 
     <View style = {styles.container}>
-      <Text style = {styles.work}>Stay Safe, Sara</Text>
+      <Text style = {styles.work}>Stay Safe Sara</Text>
       <SVG viewBox="0 0 100 100">
         <Circle
-        cx="90"
-        cy="60"
-        r="40"
-        strokeWidth="8"
-        stroke="green"
+        cx="50"
+        cy="0"
+        r="20"
+        strokeWidth="5"
+        stroke="white"
         fill="none"
-      />
+      >
+      </Circle>
       </SVG>
+
     </View>
 
   );
@@ -47,12 +49,16 @@ const App: () => React$Node = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#F6F7FB"
   },
 
   work: {
-    fontFamily: 'Lato-Regular',
+    fontFamily: "Poppins-Bold",
     fontSize: 20,
+    textAlign: "center",
+    marginTop: 60,
+    color: "black",
   },
 
   scrollView: {
