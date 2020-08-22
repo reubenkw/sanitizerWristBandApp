@@ -17,13 +17,21 @@ const ButtonOrDash = () => {
     
     if (connect === false){
         return (
+            <View style = {styles.move}>
             <Button title = "Pair" onPress = {startLoad}></Button> 
+            </View>
         )
     }
     else {
-        return <Dash />
+        return <Dash/>
     }
 
 }
+
+const styles = StyleSheet.create({
+    move: {
+        paddingTop: 200,
+    }
+})
  
 export default ButtonOrDash;

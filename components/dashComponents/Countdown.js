@@ -33,7 +33,7 @@ import Svg, {
   } from 'react-native';
 
 const Countdown = () => {
-    const [sprays, setSprays] = useState(29)
+    const [sprays, setSprays] = useState(9)
 
     const [dashArray, setDash] = useState( "0 283")
 
@@ -44,9 +44,10 @@ const Countdown = () => {
         console.log(circleDashray + " " + "283")
         return circleDashray + " " + "283"
     }
+
     return ( 
         <View>
-        <Svg height="300" width="400" viewBox="0 0 100 100" class = "path">
+        <Svg height="300" width="400" viewBox="0 0 100 100" style = {styles.path}>
         <G fill = "none" stroke = "none">
             <Circle cx="50" cy="50" r="45" stroke="#0C1B37" strokeWidth = "5"/>
         </G>
@@ -58,42 +59,17 @@ const Countdown = () => {
                 a 45,45 0 1,0 -90,0
                 "
     fill="none"
-    class = "path"
     stroke="#FFD503"
     strokeWidth = "5"
     strokeLinecap = "round"
-    strokeDasharray= "0 283"
-    
+    strokeDasharray= {setCircleDashray()}
 
   />
-        </Svg>
+</Svg>
 
-
-        
-        {/* <Svg class="baseTimer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" transform = "scaleX(-1)">
-            <G class="baseTimerCircle" fill = "none" stroke = "none">
-            <Circle class="baseTimerPathElapsed" cx="50" cy="50" r="45" StrokeWidth = "5" stroke = "#0C1B37"/>
-            <Path
-                id="baseTimerPathRemaining"
-                stroke-dasharray= {setCircleDashray()}
-                d="
-                M 50, 50
-                m -45, 0
-                a 45,45 0 1,0 90,0
-                a 45,45 0 1,0 -90,0
-                "
-                // strokeWidth = "7"
-                // strokeLinecap = "round"
-                // color = "#FFD503"
-                // transform = "rotate(90deg)"
-                // transformOrigin = "center"
-                // transition = "1s linear all"
-            ></Path>
-            </G>
-        </Svg> */}
-
-      <View id="base-timer-label" className="base-timer__label">
-        <Text>{sprays}</Text>
+      <View style = {styles.baseTimerLabel}>
+        <Text style = {styles.number}>{sprays} </Text>
+        <Text style = {styles.sprays}>Sprays </Text>
       </View>
       </View>
      );
@@ -101,13 +77,10 @@ const Countdown = () => {
 
 const styles = StyleSheet.create({
     
-    baseTimer: {
-        height: 300,
-        width: 300,
-    },
     
-    path : {
-        transform: [{ rotate: '90deg'}]
+    path: {
+        transform: [{ rotate: '90deg'}, {scaleY: -1}],
+        
     },
     
     baseTimerLabel: {
@@ -115,11 +88,25 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        width: 300,
+        width: 400,
         height: 300,
         
-    }
+    },
 
+    number : {
+        position: "absolute",
+        fontFamily: "Poppins-Bold",
+        color: "white",
+        fontSize: 50,
+
+    },
+
+    sprays: {
+        position: "absolute",
+        fontFamily: "Poppins-Bold",
+        color: "white",
+        paddingTop: 60
+    }
     })
     
 export default Countdown;

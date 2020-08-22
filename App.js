@@ -30,7 +30,6 @@ import ButtonOrDash from './components/determineRoute/buttonOrDash';
 import BluetoothContextProvider, { BluetoothContext } from './contexts/BluetoothContext';
 
 const App: () => React$Node = () => {
-
   return (
     <BluetoothContextProvider>
         <ButtonOrDash/>

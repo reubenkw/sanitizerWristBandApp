@@ -14,7 +14,8 @@ const Dash = () => {
     console.log("In dash")
     return ( 
         <View style = {styles.container}>
-            <Text style = {styles.heading}> Stay Safe</Text>
+            <Text style = {styles.heading}> STAY SAFE</Text>
+            <Text style = {styles.name}> Let's fight Covid-19! </Text>
             <Countdown />
         </View>
      );
@@ -29,8 +30,18 @@ const styles = StyleSheet.create({
     heading: {
         fontFamily: "Poppins-Bold",
         color: "white",
-        paddingTop: 60,
-        textAlign: "center"
+        paddingTop: 100,
+        textAlign: "center",
+        fontSize: 20,        
+    },
+
+    name: {
+        color: "#FFD503",
+        fontFamily: "Poppins-Medium",
+        textAlign: "center",
+        paddingBottom: 20,
+        fontSize: 15,  
+
     }
 })
  
