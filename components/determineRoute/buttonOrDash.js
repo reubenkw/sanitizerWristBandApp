@@ -11,6 +11,30 @@ import {
     Button
   } from 'react-native';
 
+  import Svg, {
+    Circle,
+    Ellipse,
+    G,
+    TSpan,
+    TextPath,
+    Path,
+    Polygon,
+    Polyline,
+    Line,
+    Rect,
+    Use,
+    Image,
+    Symbol,
+    Defs,
+    LinearGradient,
+    RadialGradient,
+    Stop,
+    ClipPath,
+    Pattern,
+    Mask,
+  } from 'react-native-svg'; 
+import Bluetooth from '../bluetooth';
+
 const ButtonOrDash = () => {
     console.log(useContext(BluetoothContext))
     const {connect, startLoad} = useContext(BluetoothContext)
@@ -18,7 +42,14 @@ const ButtonOrDash = () => {
     if (connect === false){
         return (
             <View style = {styles.move}>
-            <Button title = "Pair" onPress = {startLoad}></Button> 
+                {/* <Svg height="200" width="200" viewBox="0 0 100 100">
+                    <G>
+                    <Circle cx="50" cy="50" r="50" fill="none" stroke = "pink" strokeWidth = "5"/>
+                    </G>
+                </Svg> */}
+
+                <Button title = "Pair" onPress = {startLoad}></Button> 
+                <Bluetooth />
             </View>
         )
     }
