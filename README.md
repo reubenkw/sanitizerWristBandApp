@@ -25,3 +25,8 @@ of metrics from the device.
 ## Software
 * React Native
 * Javascript
+
+# Future Improvements
+* Decrease size and weight of wristband
+* User login for app
+* Vibration reminders to sanitize
